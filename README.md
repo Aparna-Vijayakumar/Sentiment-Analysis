@@ -8,7 +8,7 @@ This project uses the Amazon Review dataset, which can be found at https://nijia
 Rather than using the entire dataset, I used only the Beauty, Food, and Automotive categories for my analysis.
 
 ### Preprocessing:
-The data in each of the above categories was preprocessed before feeding into the model as input. Preprocessing was done using the NLTK package and involves the following steps: \\
+The data in each of the above categories was preprocessed before feeding into the model as input. Preprocessing was done using the NLTK package and involves the following steps: 
 <li>Parsing to retain only the text between the review text tags and the rating between rating tags </li>
 <li> Tokenization </li>
 <li> Removing punctuation </li>
@@ -37,29 +37,29 @@ X, and the CSV file containing the positive and negative labels into a dataframe
 We then use the train test split function in the sklearn package in Python to split the data as
 75% for training and 25% for testing.
 For each value of hyperparameter C, we fit a new Logistic Regression Model and run the
-model for 10 epochs. \\
+model for 10 epochs.
 The values we use for C are : <br>
-C = 0.01, 0.05, 0.25, 0.5, 1, 1.2, 1.5, 1.8, 2 \\
+C = 0.01, 0.05, 0.25, 0.5, 1, 1.2, 1.5, 1.8, 2 <br>
 Since the data is quite sparse (with majority of zeros for counts), we use both accuracy score as
 well as f1 score to evaluate the model.
 
 ### Results:
-We get highest training accuracy scores with C = 2 on the beauty data, we choose that as our final model and evaluate on the test set to obtain: \\
+We get highest training accuracy scores with C = 2 on the beauty data, we choose that as our final model and evaluate on the test set to obtain: <br>
 Test accuracy : 0.9972260748959778, Test f1 score : 0.9983498349834983
 
 ###  Interpreting the Model
-To check if the model makes sense, we want to see the top 5 words that had a positive sentiment.\\
-Top 5 positive words for beauty reviews : \\
-'home', 2.11 \\
-'easi', 1.83 \\
-'believ', 1.61 \\
-'best', 1.53 \\
-'smooth', 1.5 \\
+To check if the model makes sense, we want to see the top 5 words that had a positive sentiment.<br>
+Top 5 positive words for beauty reviews : 
+<li>'home', 2.11 <\li>
+<li>'easi', 1.83 <\li>
+<li>'believ', 1.61 <\li>
+<li>'best', 1.53 <\li>
+<li>'smooth', 1.5 <\li>
 
 ###  Cross Domain Sentiment Classification
-We test the model which was trained on gourmet food reviews on automotive reviews, which gives the following results : \\
-Train Data : Gourmet Food, Test Data : Automotives \\
-Test accuracy : 0.7989130434782609, Test f1 score : 0.8804523424878837 \\
+We test the model which was trained on gourmet food reviews on automotive reviews, which gives the following results : <br>
+Train Data : Gourmet Food, Test Data : Automotives <br>
+Test accuracy : 0.7989130434782609, Test f1 score : 0.8804523424878837 <br>
 We obtained lesser scores when testing our model on a different category of reviews. This
 makes sense as the two categories are mostly unrelated to each other. Delicious would be a
 positive word for food, but it does not make any sense for it to appear in a an automotive review.
