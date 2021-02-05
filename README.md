@@ -4,7 +4,7 @@
 This project uses a simple machine learning model to classify the sentiment of each product review.
 
 ### Dataset:
-This project uses the Amazon Review dataset, which can be found at https://nijianmo.github.io/amazon/index.html \\
+This project uses the Amazon Review dataset, which can be found at https://nijianmo.github.io/amazon/index.html <br>
 Rather than using the entire dataset, I used only the Beauty, Food, and Automotive categories for my analysis.
 
 ### Preprocessing:
@@ -38,7 +38,7 @@ We then use the train test split function in the sklearn package in Python to sp
 75% for training and 25% for testing.
 For each value of hyperparameter C, we fit a new Logistic Regression Model and run the
 model for 10 epochs. \\
-The values we use for C are : \\
+The values we use for C are : <br>
 C = 0.01, 0.05, 0.25, 0.5, 1, 1.2, 1.5, 1.8, 2 \\
 Since the data is quite sparse (with majority of zeros for counts), we use both accuracy score as
 well as f1 score to evaluate the model.
